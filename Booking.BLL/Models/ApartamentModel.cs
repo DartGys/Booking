@@ -8,7 +8,7 @@ namespace Booking.BLL.Models
 {
     public class ApartamentModel
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
         public string Location { get; set; }
         public decimal Price { get; set; }
         public int Rooms { get; set; }

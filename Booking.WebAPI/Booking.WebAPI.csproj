@@ -20,10 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Booking.BLL\Booking.BLL.csproj" />
     <ProjectReference Include="..\Booking.DAL\Booking.DAL.csproj" />
   </ItemGroup>
 

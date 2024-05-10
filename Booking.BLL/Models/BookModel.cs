@@ -8,7 +8,7 @@ namespace Booking.BLL.Models
 {
     public class BookModel
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
         public Guid UserId { get; set; }
         public Guid ApartamentId { get; set; }
         public DateTime StartDate { get; set; }
