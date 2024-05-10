@@ -1,6 +1,7 @@
 ﻿using Booking.BLL.Interfaces;
 using Booking.BLL.Models;
 using Booking.WebAPI.Validation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Booking.WebAPI.Controllers
@@ -16,7 +17,7 @@ namespace Booking.WebAPI.Controllers
             _userService = userService;
         }
 
-        [HttpGet]
+        [HttpGet, Authorize]
         public async Task<ActionResult<IEnumerable<UserModel>>> Get()
         {
             var users = await _userService.GetAllAsync();
@@ -24,7 +25,7 @@ namespace Booking.WebAPI.Controllers
             return Ok(users);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize]
         public async Task<ActionResult<UserModel>> GetById(Guid id)
         {
             if (id == Guid.Empty)
@@ -37,7 +38,7 @@ namespace Booking.WebAPI.Controllers
             return Ok(user);
         }
 
-        [HttpPost]
+        [HttpPost, Authorize]
         public async Task<ActionResult<UserModel>> Create(UserModel model)
         {
             string errors = Validator.User(model);
@@ -52,7 +53,7 @@ namespace Booking.WebAPI.Controllers
             return Ok(user);
         }
 
-        [HttpDelete]
+        [HttpDelete, Authorize]
         public async Task<ActionResult> Delete(Guid id)
         {
             if(id == Guid.Empty)
@@ -65,7 +66,7 @@ namespace Booking.WebAPI.Controllers
             return Ok();
         }
 
-        [HttpPatch]
+        [HttpPatch, Authorize]
         public async Task<ActionResult<UserModel>> Update(UserModel model)
         {
             string errors = Validator.User(model);

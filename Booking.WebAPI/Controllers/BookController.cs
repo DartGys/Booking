@@ -1,6 +1,7 @@
 ﻿using Booking.BLL.Interfaces;
 using Booking.BLL.Models;
 using Booking.WebAPI.Validation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Booking.WebAPI.Controllers
@@ -16,7 +17,7 @@ namespace Booking.WebAPI.Controllers
             _bookService = bookService;
         }
 
-        [HttpGet]
+        [HttpGet, Authorize]
         public async Task<ActionResult<IEnumerable<BookModel>>> Get()
         {
             var books = await _bookService.GetAllAsync();
@@ -24,7 +25,7 @@ namespace Booking.WebAPI.Controllers
             return Ok(books);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}"), Authorize]
         public async Task<ActionResult<BookModel>> GetById(Guid id)
         {
             if (id == Guid.Empty)
@@ -37,7 +38,7 @@ namespace Booking.WebAPI.Controllers
             return Ok(book);
         }
 
-        [HttpPost]
+        [HttpPost, Authorize]
         public async Task<ActionResult<BookModel>> Create(BookModel model)
         {
             string errors = Validator.Book(model);
@@ -52,7 +53,7 @@ namespace Booking.WebAPI.Controllers
             return Ok(book);
         }
 
-        [HttpDelete]
+        [HttpDelete, Authorize]
         public async Task<ActionResult> Delete(Guid id)
         {
             if(id == Guid.Empty)
@@ -65,7 +66,7 @@ namespace Booking.WebAPI.Controllers
             return Ok();
         }
 
-        [HttpPatch]
+        [HttpPatch, Authorize]
         public async Task<ActionResult<BookModel>> Update(BookModel model)
         {
             string errors = Validator.Book(model);
