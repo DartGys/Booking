@@ -10,12 +10,12 @@ namespace Booking.BLL.Interfaces
     {
         Task<IEnumerable<TModel>> GetAllAsync();
 
-        Task<TModel> GetByIdAsync(int id);
+        Task<TModel> GetByIdAsync(Guid id);
 
         Task<TModel> AddAsync(TModel model);
 
         Task<TModel> UpdateAsync(TModel model);
 
-        Task DeleteAsync(int modelId);
+        Task DeleteAsync(Guid id);
     }
 }
