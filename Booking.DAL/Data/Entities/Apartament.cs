@@ -13,5 +13,6 @@ namespace Booking.DAL.Data.Entities
         public decimal Price { get; set; }
         public int Rooms {  get; set; }
         public string Owner { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }
