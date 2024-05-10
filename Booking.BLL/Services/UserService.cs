@@ -34,7 +34,7 @@ namespace Booking.BLL.Services
 
         public async Task<UserModel> GetByIdAsync(Guid id)
         {
-            var entity = await _context.Users.FirstAsync(id);
+            var entity = await _context.Users.FindAsync(id);
 
             var models = _mapper.Map<UserModel>(entity);
 
