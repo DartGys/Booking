@@ -1,11 +1,13 @@
 using Booking.DAL;
 using Booking.BLL;
+using Booking.WebAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDataServices(builder.Configuration);
 builder.Services.AddBusinessServices();
+builder.Services.AddWebServices(builder.Configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

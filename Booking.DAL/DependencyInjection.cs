@@ -13,7 +13,7 @@ namespace Booking.DAL
             string connectionString = configuration.GetConnectionString("DefaultConnection");
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(connectionString));
 
             return services;
         }
