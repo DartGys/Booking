@@ -1,4 +1,5 @@
 ﻿using Booking.WebAPI.Data;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Booking.WebAPI
@@ -14,6 +15,8 @@ namespace Booking.WebAPI
 
             services.AddAuthorization();
 
+            services.AddIdentityApiEndpoints<IdentityUser>()
+                .AddEntityFrameworkStores<BookingIdentityDbContext>();
 
             return services;
         }
