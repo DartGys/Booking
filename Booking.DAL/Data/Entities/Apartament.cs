@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Booking.DAL.Data.Entities
 {
-    public class Apartaments
+    public class Apartament
     {
         public Guid Id { get; set; }
         public string Location { get; set; }
