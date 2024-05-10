@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.DAL", "Booking.DAL\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.WebAPI", "Booking.WebAPI\Booking.WebAPI.csproj", "{4FF1CF96-C3FB-4E12-BA48-81037E0FB003}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.BLL", "Booking.BLL\Booking.BLL.csproj", "{2F095351-CEC6-4BAD-9389-5CD14DC114CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4FF1CF96-C3FB-4E12-BA48-81037E0FB003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FF1CF96-C3FB-4E12-BA48-81037E0FB003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FF1CF96-C3FB-4E12-BA48-81037E0FB003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F095351-CEC6-4BAD-9389-5CD14DC114CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F095351-CEC6-4BAD-9389-5CD14DC114CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F095351-CEC6-4BAD-9389-5CD14DC114CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F095351-CEC6-4BAD-9389-5CD14DC114CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
